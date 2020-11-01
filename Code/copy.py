@@ -1,5 +1,9 @@
-src = 'C:\\Users\\RonSolo\\Documents\\copy\\sources'
-dst = 'C:\\Users\\RonSolo\\Documents\\copy\\destination'
+import shutil
+from pathlib import Path
 
+src = Path(input("SRC : "))
 
-print(src,dst)
+dst = Path(input("DST : ")) / str(src).replace(':', '')
+
+destination = shutil.copytree(src, dst)
+
